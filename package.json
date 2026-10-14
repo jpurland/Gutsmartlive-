@@ -1,0 +1,27 @@
+{
+  "name": "gutsmartlive",
+  "version": "1.0.0",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && wrangler dev",
+    "test": "node --test test/*.test.mjs",
+    "db:migrate:local": "wrangler d1 migrations apply gutsmartlive-db --local",
+    "deploy": "node scripts/build.mjs && wrangler deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpurland/gutsmartlive-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jpurland/gutsmartlive-/issues"
+  },
+  "homepage": "https://github.com/jpurland/gutsmartlive-#readme",
+  "devDependencies": {
+    "wrangler": "^4.151.0"
+  },
+  "private": true,
+  "type": "module"
+}

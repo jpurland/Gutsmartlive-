@@ -1,0 +1,27 @@
+<!--
+title: Review queue
+description: Moderation for Gut Smart Live.
+nav: none
+-->
+<section class="page-head">
+  <div class="wrap"><h1>Review queue</h1></div>
+</section>
+<section class="section" style="padding-top:8px">
+  <div class="wrap">
+    <form class="form" id="admin-login" style="max-width:380px">
+      <label>Admin password <input type="password" name="password" required autocomplete="current-password"></label>
+      <div><button class="btn" type="submit">Sign in</button></div>
+      <p class="notice" role="status"></p>
+    </form>
+
+    <div id="admin-panel" hidden>
+      <div class="stats" id="admin-stats"></div>
+      <p><button class="btn ghost small" id="admin-fetch">Check PubMed now</button> <span class="meta" id="admin-fetch-status" style="display:inline"></span></p>
+      <h2 style="margin-top:18px">Stories waiting</h2>
+      <div id="queue-stories"></div>
+      <h2 style="margin-top:18px">Comments waiting</h2>
+      <div id="queue-comments"></div>
+    </div>
+  </div>
+</section>
+<script src="/js/admin.js" defer></script>

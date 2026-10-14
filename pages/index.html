@@ -1,0 +1,105 @@
+<!--
+title: Gut Smart Live
+description: Research, guides and real stories about eating fermented, probiotic-rich foods with every meal to reduce visceral fat.
+nav: home
+-->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Put something alive on every plate.</h1>
+      <p class="lede">Visceral fat is the hidden fat packed around your organs, and it's the kind an MRI scan can see. Gut Smart Live gathers the newest research on fermented, probiotic-rich foods and that fat, plus honest stories from people eating this way.</p>
+      <div class="hero-actions">
+        <a class="btn" href="/living-diet">Read the guide</a>
+        <a class="btn ghost" href="/research">See the latest research</a>
+      </div>
+    </div>
+
+    <div class="plate-card" id="plate">
+      <h2>Build a living plate</h2>
+      <div class="plate-stage">
+        <svg class="plate-svg" viewBox="0 0 120 120" role="img" aria-labelledby="plate-title">
+          <title id="plate-title">Your plate</title>
+          <circle cx="60" cy="60" r="58" fill="#ffffff" stroke="#dce1de" stroke-width="2"/>
+          <circle cx="60" cy="60" r="46" fill="#f2f4f3"/>
+          <path class="seg" id="seg-protein" d="M60 60 L60 14 A46 46 0 1 0 99.8 83 Z" fill="#2f6b4f"/>
+          <path class="seg" id="seg-living" d="M60 60 L99.8 83 A46 46 0 0 0 60 14 Z" fill="#d9a441"/>
+          <circle cx="60" cy="60" r="12" fill="#ffffff" opacity=".85"/>
+        </svg>
+        <div class="plate-result" aria-live="polite">
+          <strong id="plate-name">Steak with sauerkraut</strong>
+          <p id="plate-tip">Spoon the sauerkraut on after cooking. Heat kills live cultures, so keep it cold or at room temperature.</p>
+        </div>
+      </div>
+      <div class="chip-group">
+        <span id="protein-label">Pick a protein</span>
+        <div class="chips" role="group" aria-labelledby="protein-label" data-kind="protein"></div>
+      </div>
+      <div class="chip-group">
+        <span id="living-label">Add a living food</span>
+        <div class="chips" role="group" aria-labelledby="living-label" data-kind="living"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Why visceral fat matters</h2></div>
+    <div class="grid-3">
+      <div class="fact">
+        <h3>It hides inside</h3>
+        <p>Visceral fat wraps the liver, intestines and other organs. You can carry a lot of it without looking overweight, which is why scans matter more than the mirror.</p>
+      </div>
+      <div class="fact">
+        <h3>It's metabolically active</h3>
+        <p>Research links it to insulin resistance, inflammation, fatty liver and heart disease more strongly than the fat just under the skin.</p>
+      </div>
+      <div class="fact">
+        <h3>It responds to food</h3>
+        <p>Visceral fat often shrinks faster than other fat when diet changes. Early studies suggest certain probiotic strains and fermented foods may help.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>New research</h2>
+      <a href="/research">All studies</a>
+    </div>
+    <ul class="study-list" data-research-list data-limit="5">
+      <li class="meta">Loading the latest studies…</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Member stories</h2>
+      <a href="/stories#share">Share yours</a>
+    </div>
+    <div class="grid-3" data-story-list data-limit="3">
+      <p class="empty">Stories from readers will appear here.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="newsletter">
+  <div class="wrap">
+    <div>
+      <h2>The weekly living-diet digest</h2>
+      <p>Every Monday: new studies on probiotics, fermented foods and visceral fat in plain language, plus the best new member stories. Free, and you can unsubscribe anytime.</p>
+    </div>
+    <form class="form" data-subscribe>
+      <div class="inline-form">
+        <label class="hp">Website <input name="website" tabindex="-1" autocomplete="off"></label>
+        <input type="text" name="name" placeholder="First name (optional)" autocomplete="given-name" aria-label="First name" style="flex:1 1 150px">
+        <input type="email" name="email" placeholder="Email address" required autocomplete="email" aria-label="Email address">
+        <button class="btn" type="submit">Subscribe</button>
+      </div>
+      <p class="notice" role="status"></p>
+    </form>
+  </div>
+</section>

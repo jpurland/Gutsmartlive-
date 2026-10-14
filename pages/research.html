@@ -1,0 +1,30 @@
+<!--
+title: Research
+description: A running log of new published studies on probiotics, fermented foods and visceral fat, pulled automatically from PubMed every day.
+nav: research
+-->
+<section class="page-head">
+  <div class="wrap">
+    <h1>Research log</h1>
+    <p class="lede">New studies on probiotics, fermented foods and visceral fat, pulled from PubMed, the U.S. National Library of Medicine's database, every morning. Each title links to the original study.</p>
+    <p class="meta" id="research-updated"></p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:12px">
+  <div class="wrap">
+    <form class="filters" id="research-filters" role="search">
+      <input type="search" name="q" placeholder="Search titles and journals" aria-label="Search studies">
+      <select name="topic" aria-label="Topic" style="flex:0 1 260px">
+        <option value="">All topics</option>
+        <option value="visceral-fat">Probiotics & visceral fat</option>
+        <option value="fermented-foods">Fermented foods & the gut</option>
+        <option value="visceral-imaging">Measuring visceral fat</option>
+      </select>
+    </form>
+    <p class="meta" id="research-count" style="margin:0 0 8px"></p>
+    <ul class="study-list" data-research-list data-research-page></ul>
+    <p style="margin-top:12px"><button class="btn ghost small" id="research-more" hidden>Show more studies</button></p>
+    <div class="callout">A new study is one data point, not a verdict. Many probiotic trials are small, short or funded by manufacturers. Our <a href="/articles/what-the-research-says">research overview</a> explains how to weigh them.</div>
+  </div>
+</section>

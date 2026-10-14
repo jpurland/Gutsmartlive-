@@ -1,0 +1,45 @@
+<!--
+title: Member stories
+description: Real experiences from people adding fermented, probiotic-rich foods to every meal: what worked, what didn't, and what they'd do differently.
+nav: stories
+-->
+<section class="page-head">
+  <div class="wrap">
+    <h1>Member stories</h1>
+    <p class="lede">What happened when real people put living foods on every plate. Good results, mixed results and things that didn't work are all welcome here.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:12px">
+  <div class="wrap">
+    <div class="grid-3" data-story-list data-limit="30">
+      <p class="empty">No stories yet. Be the first to share what you've tried.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="share">
+  <div class="narrow">
+    <h2>Share your story</h2>
+    <p class="meta" style="margin-bottom:12px">Every story is read before it's posted. We publish your first name or nickname only, never your email.</p>
+    <form class="form" id="story-form">
+      <label class="hp">Website <input name="website" tabindex="-1" autocomplete="off"></label>
+      <div class="form-row">
+        <label>First name or nickname <input name="name" required maxlength="60" autocomplete="given-name"></label>
+        <label>Email <small>optional, so we can reply</small> <input type="email" name="email" maxlength="254" autocomplete="email"></label>
+      </div>
+      <label>Title <input name="title" required maxlength="120" placeholder="Kefir every morning for six months"></label>
+      <fieldset>
+        <legend>How did it go?</legend>
+        <label class="radio-chip"><input type="radio" name="outcome" value="worked"> It worked</label>
+        <label class="radio-chip"><input type="radio" name="outcome" value="mixed" checked> Mixed results</label>
+        <label class="radio-chip"><input type="radio" name="outcome" value="didnt"> Didn't work for me</label>
+      </fieldset>
+      <label>Your story <small>What you ate, for how long, what changed, and any scans or numbers you tracked.</small>
+        <textarea name="body" required minlength="80" maxlength="5000"></textarea>
+      </label>
+      <div><button class="btn" type="submit">Send for review</button></div>
+      <p class="notice" role="status"></p>
+    </form>
+  </div>
+</section>
