@@ -22,7 +22,7 @@ function walk(dir) {
   });
 }
 
-const NAV = ["guide", "research", "articles", "stories"];
+const NAV = ["guide", "research", "articles", "stories", "watch", "conditions"];
 let count = 0;
 
 for (const file of walk(pagesDir)) {

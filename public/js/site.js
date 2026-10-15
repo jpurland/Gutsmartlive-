@@ -206,4 +206,12 @@
 
   $$("[data-subscribe]").forEach((f) => wireForm(f, () => "/api/subscribe"));
   wireForm($("#story-form"), () => "/api/stories");
+
+  // Conditions page: open the condition named in the URL (e.g. /conditions#obesity)
+  function openFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const el = id && document.getElementById(id);
+    if (el && el.tagName === "DETAILS") { el.open = true; el.scrollIntoView({ block: "start" }); }
+  }
+  if ($(".cond")) { openFromHash(); window.addEventListener("hashchange", openFromHash); }
 })();
