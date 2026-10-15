@@ -51,6 +51,35 @@
   </div>
 </section>
 
+<section class="finder-section">
+  <div class="wrap">
+    <div class="finder">
+      <div class="finder-head">
+        <h2>What are you dealing with?</h2>
+        <p>See what research says about your gut and conditions like obesity, arthritis and diabetes.</p>
+      </div>
+      <form class="finder-form" action="/conditions" method="get" role="search">
+        <input type="search" name="q" id="finder-q" placeholder="Try arthritis or weight" aria-label="Search conditions" autocomplete="off">
+        <button class="btn" type="submit">Search</button>
+      </form>
+      <div class="cond-chips" id="finder-chips">
+        <a href="/conditions#obesity" data-keywords="obesity overweight weight belly fat visceral">Obesity &amp; visceral fat</a>
+        <a href="/conditions#arthritis" data-keywords="rheumatoid arthritis ra joint">Rheumatoid arthritis</a>
+        <a href="/conditions#diabetes" data-keywords="type 2 diabetes blood sugar insulin">Type 2 diabetes</a>
+        <a href="/conditions#heart" data-keywords="heart cholesterol blood pressure">Heart disease</a>
+        <a href="/conditions#fatty-liver" data-keywords="fatty liver nafld">Fatty liver</a>
+        <a href="/conditions#autoimmune" data-keywords="autoimmune lupus ms">Autoimmune</a>
+        <a href="/conditions#ibs-ibd" data-keywords="ibs ibd crohns colitis bloating">IBS &amp; IBD</a>
+        <a href="/conditions#mood" data-keywords="depression anxiety stress mood">Depression &amp; anxiety</a>
+        <a href="/conditions#brain" data-keywords="parkinsons alzheimers dementia">Parkinson's &amp; Alzheimer's</a>
+        <a href="/conditions#allergies" data-keywords="allergies asthma">Allergies &amp; asthma</a>
+        <a href="/conditions#skin" data-keywords="eczema psoriasis skin">Eczema &amp; psoriasis</a>
+        <a class="cond-all" href="/conditions">All conditions &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="plate-section">
   <div class="wrap">
     <div class="plate-card" id="plate">
@@ -91,22 +120,6 @@
       </span>
       <span class="media-cta">Watch &amp; Listen <span aria-hidden="true">&rarr;</span></span>
     </a>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><h2>Browse by condition</h2><p><a href="/conditions">See all conditions &rarr;</a></p></div>
-    <div class="cond-chips">
-      <a href="/conditions#obesity">Obesity &amp; visceral fat</a>
-      <a href="/conditions#diabetes">Type 2 diabetes</a>
-      <a href="/conditions#heart">Heart disease</a>
-      <a href="/conditions#autoimmune">Autoimmune &amp; arthritis</a>
-      <a href="/conditions#ibs-ibd">IBS &amp; IBD</a>
-      <a href="/conditions#mood">Depression &amp; anxiety</a>
-      <a href="/conditions#brain">Parkinson's &amp; Alzheimer's</a>
-      <a href="/conditions#allergies">Allergies &amp; asthma</a>
-    </div>
   </div>
 </section>
 
@@ -176,7 +189,7 @@
   <div class="wrap">
     <div>
       <p><strong style="color:var(--ink)">Gut Smart Live</strong> is an independent resource on fermented, probiotic-rich foods and visceral fat. It is educational only and not medical advice. Talk with your doctor before changing your diet, especially if you are pregnant, immune-compromised or managing a health condition.</p>
-      <p>Inspired by the work of Dr. Sean O'Mara. Gut Smart Live is not affiliated with or endorsed by Dr. O'Mara.</p>
+      <p>Inspired by the work of <a href="https://www.drseanomara.com/" target="_blank" rel="noopener">Dr. Sean O'Mara</a>. Gut Smart Live is not affiliated with or endorsed by Dr. O'Mara.</p>
     </div>
     <nav aria-label="Footer">
       <a href="/living-diet">The Living Diet</a>

@@ -42,16 +42,20 @@
 <section class="page-head">
   <div class="wrap">
     <h1>Conditions and your gut</h1>
-    <p class="lede">Researchers are linking the gut microbiome to a growing list of health conditions. Tap a condition to see the videos, films and articles that cover it.</p>
+    <p class="lede">Researchers are linking the gut microbiome to a growing list of health conditions. Search or tap a condition to see the videos, films and articles that cover it.</p>
   </div>
 </section>
 
 <section class="section" style="padding-top:12px">
   <div class="wrap">
+    <div class="cond-search">
+      <input type="search" id="cond-search" placeholder="Try arthritis or weight" aria-label="Search conditions" autocomplete="off">
+    </div>
+    <p class="empty" id="cond-empty" hidden>No match yet. Try another word, or browse the full list below.</p>
     <div class="cond-grid">
 
-      <details class="cond" id="obesity">
-        <summary><span class="cond-name">Obesity &amp; visceral fat</span><span class="cond-count">4 resources</span></summary>
+      <details class="cond" id="obesity" data-keywords="obesity overweight weight belly fat visceral fat metabolism">
+        <summary><span class="cond-name">Obesity &amp; visceral fat</span><span class="cond-count">5 resources</span></summary>
         <div class="cond-body">
           <p class="cond-callout"><strong>Obesity is a disease, not a personal failing.</strong> Your gut bacteria help decide how you store fat and how hungry you feel. Changing what feeds them can change the outcome.</p>
           <ul class="ref-list">
@@ -59,103 +63,145 @@
             <li><a href="https://www.drseanomara.com/" target="_blank" rel="noopener"><span class="ref-type">Expert</span><b>Dr. Sean O'Mara</b><span class="ref-where">Uses MRI scans to track visceral fat as patients change their diet</span></a></li>
             <li><a href="/articles/what-is-visceral-fat"><span class="ref-type">Article</span><b>What is visceral fat?</b><span class="ref-where">Gut Smart Live</span></a></li>
             <li><a href="/living-diet"><span class="ref-type">Guide</span><b>The Living Diet</b><span class="ref-where">Gut Smart Live &middot; fermented foods with every meal</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28obesity%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="diabetes">
-        <summary><span class="cond-name">Type 2 diabetes</span><span class="cond-count">1 resource</span></summary>
+      <details class="cond" id="diabetes" data-keywords="type 2 diabetes blood sugar insulin resistance prediabetes">
+        <summary><span class="cond-name">Type 2 diabetes</span><span class="cond-count">2 resources</span></summary>
         <div class="cond-body">
           <ul class="ref-list">
             <li><a href="https://www.masterclass.com/series/gut-health" target="_blank" rel="noopener"><span class="ref-type">Series</span><b>MasterClass: Gut Health</b><span class="ref-where">Episode 1, The Microbes Among Us &middot; fiber-rich foods like flaxseed and diabetes risk</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28type+2+diabetes%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="heart">
-        <summary><span class="cond-name">Heart disease &amp; cholesterol</span><span class="cond-count">1 resource</span></summary>
+      <details class="cond" id="heart" data-keywords="heart disease cholesterol blood pressure cardiovascular">
+        <summary><span class="cond-name">Heart disease &amp; cholesterol</span><span class="cond-count">2 resources</span></summary>
         <div class="cond-body">
           <ul class="ref-list">
             <li><a href="https://www.masterclass.com/series/gut-health" target="_blank" rel="noopener"><span class="ref-type">Series</span><b>MasterClass: Gut Health</b><span class="ref-where">Episode 1, The Microbes Among Us &middot; foods like flaxseed, chia and blueberries for heart health and cholesterol</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28cardiovascular+disease%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="inflammation">
-        <summary><span class="cond-name">Chronic inflammation</span><span class="cond-count">2 resources</span></summary>
+      <details class="cond" id="inflammation" data-keywords="inflammation chronic inflammation">
+        <summary><span class="cond-name">Chronic inflammation</span><span class="cond-count">3 resources</span></summary>
         <div class="cond-body">
           <ul class="ref-list">
             <li><a href="https://www.masterclass.com/series/gut-health" target="_blank" rel="noopener"><span class="ref-type">Series</span><b>MasterClass: Gut Health</b><span class="ref-where">Episode 1, The Microbes Among Us &middot; anti-inflammatory foods</span></a></li>
             <li><a href="https://www.netflix.com/title/81436688" target="_blank" rel="noopener"><span class="ref-type">Film</span><b>Hack Your Health: The Secrets of Your Gut</b><span class="ref-where">Netflix</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28chronic+inflammation%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="autoimmune">
-        <summary><span class="cond-name">Autoimmune conditions</span><span class="cond-count">2 resources</span></summary>
+      <details class="cond" id="autoimmune" data-keywords="autoimmune lupus multiple sclerosis ms type 1 diabetes immune">
+        <summary><span class="cond-name">Autoimmune conditions</span><span class="cond-count">3 resources</span></summary>
         <div class="cond-body">
-          <p>Conditions where the immune system attacks the body, such as rheumatoid arthritis. Much of the immune system lives in the gut.</p>
+          <p>Conditions where the immune system attacks the body, such as lupus, multiple sclerosis and type 1 diabetes. Much of the immune system lives in the gut. See also <a href="#arthritis">rheumatoid arthritis</a>.</p>
           <ul class="ref-list">
             <li><a href="https://www.masterclass.com/series/gut-health" target="_blank" rel="noopener"><span class="ref-type">Series</span><b>MasterClass: Gut Health</b><span class="ref-where">The Sonnenburgs on gut habits that strengthen immunity</span></a></li>
             <li><a href="https://www.netflix.com/title/81436688" target="_blank" rel="noopener"><span class="ref-type">Film</span><b>Hack Your Health: The Secrets of Your Gut</b><span class="ref-where">Netflix</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28autoimmune+disease%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="ibs-ibd">
-        <summary><span class="cond-name">IBS &amp; inflammatory bowel disease</span><span class="cond-count">2 resources</span></summary>
+      <details class="cond" id="arthritis" data-keywords="rheumatoid arthritis ra joint pain joints arthritis">
+        <summary><span class="cond-name">Rheumatoid arthritis</span><span class="cond-count">1 resource</span></summary>
+        <div class="cond-body">
+          <p>Researchers have found that people with rheumatoid arthritis often carry a different mix of gut bacteria, and that some species may help trigger joint inflammation.</p>
+          <ul class="ref-list">
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28rheumatoid+arthritis%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="cond" id="fatty-liver" data-keywords="fatty liver nafld masld liver">
+        <summary><span class="cond-name">Fatty liver disease</span><span class="cond-count">2 resources</span></summary>
+        <div class="cond-body">
+          <p>Fat that builds up in the liver often travels with visceral fat. The gut and liver are directly connected, and gut bacteria affect how much fat the liver stores.</p>
+          <ul class="ref-list">
+            <li><a href="/articles/what-is-visceral-fat"><span class="ref-type">Article</span><b>What is visceral fat?</b><span class="ref-where">Gut Smart Live</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28fatty+liver+disease%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="cond" id="skin" data-keywords="eczema psoriasis skin acne atopic dermatitis rash">
+        <summary><span class="cond-name">Eczema &amp; psoriasis</span><span class="cond-count">1 resource</span></summary>
+        <div class="cond-body">
+          <p>Studies link inflammatory skin conditions to changes in gut bacteria, sometimes called the gut-skin axis.</p>
+          <ul class="ref-list">
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28atopic+dermatitis+OR+psoriasis%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="cond" id="ibs-ibd" data-keywords="ibs ibd irritable bowel crohns crohn colitis ulcerative bloating digestion">
+        <summary><span class="cond-name">IBS &amp; inflammatory bowel disease</span><span class="cond-count">3 resources</span></summary>
         <div class="cond-body">
           <ul class="ref-list">
             <li><a href="https://www.masterclass.com/series/gut-health" target="_blank" rel="noopener"><span class="ref-type">Series</span><b>MasterClass: Gut Health</b><span class="ref-where">Dr. Emeran Mayer on the brain-gut system and bowel disorders</span></a></li>
             <li><a href="https://www.netflix.com/title/81436688" target="_blank" rel="noopener"><span class="ref-type">Film</span><b>Hack Your Health: The Secrets of Your Gut</b><span class="ref-where">Netflix &middot; follows a patient living with digestive conditions</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28irritable+bowel+syndrome+OR+inflammatory+bowel+disease%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="mood">
-        <summary><span class="cond-name">Depression, anxiety &amp; stress</span><span class="cond-count">2 resources</span></summary>
+      <details class="cond" id="mood" data-keywords="depression anxiety stress mood mental health">
+        <summary><span class="cond-name">Depression, anxiety &amp; stress</span><span class="cond-count">3 resources</span></summary>
         <div class="cond-body">
           <ul class="ref-list">
             <li><a href="https://www.masterclass.com/series/gut-health" target="_blank" rel="noopener"><span class="ref-type">Series</span><b>MasterClass: Gut Health</b><span class="ref-where">Dr. Emeran Mayer on the gut-brain connection, mood and chronic stress</span></a></li>
             <li><a href="https://www.netflix.com/title/81436688" target="_blank" rel="noopener"><span class="ref-type">Film</span><b>Hack Your Health: The Secrets of Your Gut</b><span class="ref-where">Netflix &middot; research linking gut microbes to depression and anxiety</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28depression+OR+anxiety%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="brain">
-        <summary><span class="cond-name">Parkinson's &amp; Alzheimer's</span><span class="cond-count">2 resources</span></summary>
+      <details class="cond" id="brain" data-keywords="parkinsons alzheimers dementia brain memory">
+        <summary><span class="cond-name">Parkinson's &amp; Alzheimer's</span><span class="cond-count">3 resources</span></summary>
         <div class="cond-body">
           <ul class="ref-list">
             <li><a href="https://www.masterclass.com/series/gut-health" target="_blank" rel="noopener"><span class="ref-type">Series</span><b>MasterClass: Gut Health</b><span class="ref-where">Dr. Emeran Mayer on the gut's role in brain disease</span></a></li>
             <li><a href="https://www.netflix.com/title/81436688" target="_blank" rel="noopener"><span class="ref-type">Film</span><b>Hack Your Health: The Secrets of Your Gut</b><span class="ref-where">Netflix &middot; Parkinson's</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Parkinson%27s+OR+Alzheimer%27s%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="allergies">
-        <summary><span class="cond-name">Allergies &amp; asthma</span><span class="cond-count">2 resources</span></summary>
+      <details class="cond" id="allergies" data-keywords="allergies asthma food allergy hay fever">
+        <summary><span class="cond-name">Allergies &amp; asthma</span><span class="cond-count">3 resources</span></summary>
         <div class="cond-body">
           <ul class="ref-list">
             <li><a href="https://www.netflix.com/title/81436688" target="_blank" rel="noopener"><span class="ref-type">Film</span><b>Hack Your Health: The Secrets of Your Gut</b><span class="ref-where">Netflix &middot; allergies</span></a></li>
-            <li><a href="https://www.bbc.co.uk/programmes/b09yddx5" target="_blank" rel="noopener"><span class="ref-type">Audio</span><b>The Second Genome</b><span class="ref-where">BBC Radio 4 &middot; episode "Dirt and Development" on pets, infant gut bacteria and asthma</span></a></li>
+            <li><a href="https://www.bbc.co.uk/programmes/b09yddx5" target="_blank" rel="noopener"><span class="ref-type">Audio</span><b>The Second Genome</b><span class="ref-where">BBC Radio 4 &middot; 3-part series; covers pets, infant gut bacteria and asthma</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28allergy+OR+asthma%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="cancer">
-        <summary><span class="cond-name">Cancer risk</span><span class="cond-count">1 resource</span></summary>
+      <details class="cond" id="cancer" data-keywords="cancer colon cancer colorectal">
+        <summary><span class="cond-name">Cancer risk</span><span class="cond-count">2 resources</span></summary>
         <div class="cond-body">
           <ul class="ref-list">
             <li><a href="https://www.masterclass.com/series/gut-health" target="_blank" rel="noopener"><span class="ref-type">Series</span><b>MasterClass: Gut Health</b><span class="ref-where">Episode 1, The Microbes Among Us &middot; fiber and plant compounds linked to lower risk</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28colorectal+cancer%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
 
-      <details class="cond" id="c-diff">
-        <summary><span class="cond-name">C. diff infection</span><span class="cond-count">1 resource</span></summary>
+      <details class="cond" id="c-diff" data-keywords="c diff c. difficile clostridium infection diarrhea fecal transplant">
+        <summary><span class="cond-name">C. diff infection</span><span class="cond-count">2 resources</span></summary>
         <div class="cond-body">
           <ul class="ref-list">
             <li><a href="https://www.netflix.com/title/81436688" target="_blank" rel="noopener"><span class="ref-type">Film</span><b>Hack Your Health: The Secrets of Your Gut</b><span class="ref-where">Netflix &middot; fecal transplants as a treatment</span></a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%28Clostridioides+difficile%29+AND+gut+microbiome&amp;sort=date" target="_blank" rel="noopener"><span class="ref-type">Studies</span><b>Latest published research</b><span class="ref-where">PubMed &middot; newest studies on the gut microbiome and this condition</span></a></li>
           </ul>
         </div>
       </details>
@@ -169,7 +215,7 @@
   <div class="wrap">
     <div>
       <p><strong style="color:var(--ink)">Gut Smart Live</strong> is an independent resource on fermented, probiotic-rich foods and visceral fat. It is educational only and not medical advice. Talk with your doctor before changing your diet, especially if you are pregnant, immune-compromised or managing a health condition.</p>
-      <p>Inspired by the work of Dr. Sean O'Mara. Gut Smart Live is not affiliated with or endorsed by Dr. O'Mara.</p>
+      <p>Inspired by the work of <a href="https://www.drseanomara.com/" target="_blank" rel="noopener">Dr. Sean O'Mara</a>. Gut Smart Live is not affiliated with or endorsed by Dr. O'Mara.</p>
     </div>
     <nav aria-label="Footer">
       <a href="/living-diet">The Living Diet</a>

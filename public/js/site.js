@@ -214,4 +214,38 @@
     if (el && el.tagName === "DETAILS") { el.open = true; el.scrollIntoView({ block: "start" }); }
   }
   if ($(".cond")) { openFromHash(); window.addEventListener("hashchange", openFromHash); }
+
+  // Condition search: matches the name plus extra keywords (e.g. "weight" finds obesity)
+  const norm = (t) => t.toLowerCase().replace(/[^a-z0-9 ]+/g, " ");
+  const matches = (el, q) => {
+    const hay = norm(el.textContent + " " + (el.dataset.keywords || ""));
+    return norm(q).split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
+  };
+  const condSearch = $("#cond-search");
+  if (condSearch) {
+    const conds = $$(".cond");
+    const empty = $("#cond-empty");
+    const run = () => {
+      const q = condSearch.value.trim();
+      let shown = 0;
+      conds.forEach((c) => {
+        const ok = !q || matches(c.querySelector("summary"), q) || matches(c, q);
+        c.hidden = !ok;
+        if (ok) shown++;
+      });
+      empty.hidden = shown > 0;
+      if (q && shown === 1) conds.find((c) => !c.hidden).open = true;
+    };
+    const q0 = new URLSearchParams(location.search).get("q");
+    if (q0) { condSearch.value = q0; run(); }
+    condSearch.addEventListener("input", run);
+  }
+  const finderQ = $("#finder-q");
+  if (finderQ) {
+    const chips = $$("#finder-chips a:not(.cond-all)");
+    finderQ.addEventListener("input", () => {
+      const q = finderQ.value.trim();
+      chips.forEach((a) => { a.hidden = !!q && !matches(a, q); });
+    });
+  }
 })();
