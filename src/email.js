@@ -26,9 +26,11 @@ async function resend(env, path, body) {
 }
 
 export async function addResendContact(env, email, name) {
+  // Copying signups into Resend contacts needs a full-access key, so it only runs once a
+  // segment is configured. Subscribers always live in D1 either way.
   const segment = await setting(env, "resend_segment_id");
-  const body = { email, first_name: name || undefined, unsubscribed: false };
-  if (segment) body.segments = [{ id: segment }];
+  if (!segment) return null;
+  const body = { email, first_name: name || undefined, unsubscribed: false, segments: [{ id: segment }] };
   return resend(env, "/contacts", body);
 }
 
