@@ -209,3 +209,53 @@ main > .band:last-child { margin-bottom: -32px; }
 .empty { color: var(--muted); background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius); padding: 16px; margin: 0; }
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: 12px; top: 8px; background: var(--surface); padding: 8px 12px; z-index: 20; }
+
+/* Condition boxes */
+.cond-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.cond-box {
+  display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.cond-box:hover { border-color: var(--brine); color: var(--ink); transform: translateY(-1px); }
+.cond-box h3 { font-size: 1.15rem; margin: 0; }
+.cond-box p { color: var(--muted); font-size: .94rem; margin: 0; flex: 1; }
+.cond-box.featured {
+  grid-column: span 2; background: var(--brine-deep); border-color: var(--brine-deep); color: #fff;
+  padding: 18px 20px; position: relative; overflow: hidden;
+}
+.cond-box.featured::after {
+  content: ""; position: absolute; right: -36px; bottom: -48px; width: 160px; height: 160px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(217,164,65,.55) 0 10%, transparent 11%),
+              radial-gradient(circle at 62% 58%, rgba(229,238,233,.25) 0 14%, transparent 15%),
+              radial-gradient(circle at 30% 70%, rgba(217,164,65,.35) 0 7%, transparent 8%);
+  pointer-events: none;
+}
+.cond-box.featured:hover { border-color: var(--culture); color: #fff; }
+.cond-box.featured h3 { font-size: clamp(1.4rem, 3vw, 1.8rem); }
+.cond-box.featured p { color: #dfe9e3; font-size: 1rem; max-width: 46ch; }
+.cond-eyebrow { font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--culture); }
+.cond-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: .82rem; color: var(--muted); margin-top: 6px; }
+.cond-box.featured .cond-meta { color: #dfe9e3; }
+.ev { font-size: .74rem; font-weight: 600; border-radius: 999px; padding: 2px 8px; }
+.ev-strong { background: var(--tint); color: var(--brine-deep); }
+.ev-growing { background: #f3ead6; color: #6b5220; }
+.ev-early { background: var(--band); color: var(--muted); }
+.cond-box.featured .ev-strong { background: var(--culture); color: var(--ink); }
+@media (max-width: 860px) { .cond-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .cond-grid { grid-template-columns: 1fr; } .cond-box.featured { grid-column: auto; } .cond-box.featured::after { opacity: .5; } }
+
+/* Highlighted nav link */
+.nav a.nav-feature { font-weight: 600; color: var(--brine-deep); box-shadow: inset 0 0 0 1.5px var(--culture); }
+.nav a.nav-feature:hover, .nav a.nav-feature[aria-current="page"] { background: #f6edd9; color: var(--ink); }
+
+/* Condition article lists and pages */
+.cond-group + .cond-group { margin-top: 22px; }
+.story-card.numbered { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; }
+.story-card .num { width: 26px; height: 26px; border-radius: 50%; background: var(--tint); color: var(--brine-deep); font-weight: 700; font-size: .85rem; display: grid; place-items: center; margin-top: 1px; }
+.series-tag { display: inline-block; font-size: .78rem; font-weight: 600; background: var(--tint); color: var(--brine-deep); border-radius: 999px; padding: 2px 9px; margin-bottom: 8px; }
+.breadcrumb + .series-tag { margin-top: -2px; }
+.prose .cites { font-size: .92rem; line-height: 1.5; }
+.next-card { display: block; margin: 1.4rem 0 .4rem; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--ink); font-family: var(--sans); font-weight: 600; }
+.next-card span { display: block; font-size: .8rem; font-weight: 500; color: var(--muted); }
+.next-card:hover { border-color: var(--brine); color: var(--ink); }

@@ -2,7 +2,7 @@
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
 import { spawn, execFileSync } from "node:child_process";
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdtempSync, rmSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
@@ -54,6 +54,37 @@ test("every page renders with the shared header and footer", async () => {
     assert.ok(html.includes('class="site-header"') && html.includes('class="site-footer"'), `${p} has chrome`);
     assert.ok(html.includes("not affiliated with or endorsed by Dr. O'Mara"), `${p} has disclaimer`);
   }
+});
+
+test("every condition section and article renders and is linked from the condition boxes", async () => {
+  const conditions = JSON.parse(readFileSync("content/conditions.json", "utf8"));
+  assert.ok(conditions.length > 0);
+  assert.equal(conditions.filter((c) => c.featured).length, 1, "exactly one featured condition");
+  for (const page of ["/", "/conditions/"]) {
+    const html = await (await fetch(BASE + page)).text();
+    for (const c of conditions) assert.ok(html.includes(`href="/conditions/${c.slug}/"`), `${page} has a box for ${c.slug}`);
+    assert.ok(html.includes('class="cond-box featured"'), `${page} highlights the featured condition`);
+  }
+  const articlesIndex = await (await fetch(BASE + "/articles/")).text();
+  for (const c of conditions) {
+    const res = await fetch(BASE + `/conditions/${c.slug}/`);
+    assert.equal(res.status, 200, c.slug);
+    const section = await res.text();
+    assert.ok(section.includes("class=\"site-footer\""), `${c.slug} has chrome`);
+    for (const a of c.articles) {
+      const path = `/conditions/${c.slug}/${a.slug}`;
+      assert.ok(section.includes(`href="${path}"`), `${c.slug} section lists ${a.slug}`);
+      assert.ok(articlesIndex.includes(`href="${path}"`), `articles index lists ${a.slug}`);
+      const art = await fetch(BASE + path);
+      assert.equal(art.status, 200, path);
+      const body = await art.text();
+      assert.ok(body.includes(`href="/conditions/${c.slug}/"`), `${path} links back to its section`);
+      assert.ok(body.includes("not affiliated with or endorsed by Dr. O'Mara"), `${path} has disclaimer`);
+    }
+  }
+  const sitemap = await (await fetch(BASE + "/sitemap.xml")).text();
+  assert.ok(sitemap.includes("/conditions/obesity/a-disease-not-a-failing"));
+  assert.ok(!sitemap.includes("/admin"), "admin stays out of the sitemap");
 });
 
 test("unknown pages return the 404 page", async () => {
