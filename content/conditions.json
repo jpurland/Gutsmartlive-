@@ -170,5 +170,26 @@
         "minutes": 7
       }
     ]
+  },
+  {
+    "slug": "mood",
+    "title": "Mood & Gut-Brain",
+    "summary": "How gut bacteria and the brain communicate, and what diet and probiotics can realistically do for mood.",
+    "evidence": "early",
+    "intro": "Your gut and brain talk all the time through nerves, hormones, the immune system and chemicals made by gut bacteria. Animal studies show gut microbes can change behavior. In people, the evidence is mostly links plus a few small trials. Food appears to support mood, but it adds to proper treatment and doesn't replace it.",
+    "articles": [
+      {
+        "slug": "gut-brain-axis",
+        "title": "The gut–brain axis: how gut bacteria talk to your brain",
+        "blurb": "The vagus nerve, gut serotonin and the key animal and human studies, with mouse findings kept separate from what's shown in people.",
+        "minutes": 6
+      },
+      {
+        "slug": "food-and-mood",
+        "title": "Food, fermented foods and probiotics for mood: what the evidence supports",
+        "blurb": "What the SMILES diet trial, fermented-food research and probiotic studies actually show about depression and anxiety.",
+        "minutes": 6
+      }
+    ]
   }
 ]
