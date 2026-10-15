@@ -65,5 +65,89 @@
         "minutes": 5
       }
     ]
+  },
+  {
+    "slug": "ibs",
+    "title": "IBS & Digestion",
+    "summary": "How gut bacteria relate to IBS and bloating, and what probiotics, low-FODMAP and fermented foods really do.",
+    "evidence": "growing",
+    "intro": "Irritable bowel syndrome is now understood as a disorder of gut-brain interaction, and gut bacteria are part of that picture: IBS can start after a stomach infection, and the gut community often looks different. But microbes are one piece of a larger system, and no diet or supplement cures IBS. These articles cover what the research shows and which approaches have real evidence behind them.",
+    "articles": [
+      {
+        "slug": "ibs-and-the-microbiome",
+        "title": "IBS and the microbiome: what's different in the gut",
+        "blurb": "Post-infectious IBS, how gut bacteria differ in IBS, the gut-brain link, the rifaximin trials and the SIBO debate.",
+        "minutes": 6
+      },
+      {
+        "slug": "probiotics-fodmap-fermented-foods",
+        "title": "Probiotics, low-FODMAP and fermented foods for IBS: what the evidence says",
+        "blurb": "What trials and the ACG and AGA guidelines say about probiotics, low-FODMAP, fiber and fermented foods, plus red-flag symptoms.",
+        "minutes": 6
+      }
+    ]
+  },
+  {
+    "slug": "ibd",
+    "title": "Crohn's & Colitis",
+    "summary": "How gut bacteria shape Crohn's and ulcerative colitis, and which microbiome treatments have real trial evidence.",
+    "evidence": "strong",
+    "intro": "Crohn's disease and ulcerative colitis are lifelong inflammatory conditions in which the immune system attacks the gut. Genes, environment and gut bacteria all play a part, and the microbiome is one of the most studied pieces. These articles cover what the research shows and which bacteria-focused treatments have been tested in trials.",
+    "articles": [
+      {
+        "slug": "crohns-colitis-and-the-microbiome",
+        "title": "Crohn's, colitis and the microbiome",
+        "blurb": "Germ-free mice, bacteria-sensing genes and missing protective microbes: what links gut bacteria to IBD.",
+        "minutes": 6
+      },
+      {
+        "slug": "treatments-that-target-gut-bacteria",
+        "title": "Treatments that target the gut bacteria in IBD",
+        "blurb": "What trials show for fecal transplants, probiotics and the Crohn's Disease Exclusion Diet, and where the evidence stops.",
+        "minutes": 6
+      }
+    ]
+  },
+  {
+    "slug": "fatty-liver",
+    "title": "Fatty Liver Disease",
+    "summary": "How gut bacteria and a leaky gut feed liver fat, and what helps protect the liver.",
+    "evidence": "growing",
+    "intro": "Fatty liver disease, now called MASLD, affects roughly 3 in 10 adults worldwide, and most don't know they have it. Because blood from the gut flows straight to the liver, gut bacteria and a leaky gut lining can push the liver toward storing fat. Mouse studies show that bacteria can cause fatty liver. Human studies show strong links but less proof of cause.",
+    "articles": [
+      {
+        "slug": "the-gut-liver-axis",
+        "title": "The gut–liver axis: how gut bacteria feed fatty liver disease",
+        "blurb": "Why the liver is the first organ to meet what comes out of the gut, and what mouse and human studies show.",
+        "minutes": 6
+      },
+      {
+        "slug": "protecting-your-liver",
+        "title": "Protecting your liver through your gut",
+        "blurb": "Weight loss, less added sugar, fiber, fermented foods, alcohol and an honest look at probiotics.",
+        "minutes": 6
+      }
+    ]
+  },
+  {
+    "slug": "heart-health",
+    "title": "Heart Health",
+    "summary": "How gut bacteria shape heart risk through TMAO, inflammation, blood pressure and cholesterol.",
+    "evidence": "growing",
+    "intro": "Gut bacteria turn some foods into compounds that can either raise or lower heart risk. Large human studies link the gut-made compound TMAO to heart attacks and strokes, though whether it actually causes them is still debated. Fiber and fermented foods have modest, real effects on blood pressure, cholesterol and inflammation that can add to good medical care.",
+    "articles": [
+      {
+        "slug": "tmao-and-heart-disease",
+        "title": "TMAO and the gut's role in heart disease",
+        "blurb": "How gut bacteria turn nutrients in meat and eggs into TMAO, what links it to heart attacks, and why its role is still debated.",
+        "minutes": 7
+      },
+      {
+        "slug": "blood-pressure-and-cholesterol",
+        "title": "Gut bacteria, blood pressure and cholesterol: what helps",
+        "blurb": "What the evidence shows for fiber, fermented foods and probiotics on blood pressure, cholesterol and inflammation, plus a realistic plan.",
+        "minutes": 7
+      }
+    ]
   }
 ]
