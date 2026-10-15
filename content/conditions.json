@@ -7,12 +7,63 @@
     "summary": "Obesity is a disease, not a character flaw. Your gut bacteria help decide how much fat your body stores.",
     "intro": "Obesity is a chronic disease shaped by genes, hormones, environment and the trillions of bacteria in your gut. It isn't a failure of willpower. This six-part series walks through the evidence and what you can do about it.",
     "articles": [
-      { "slug": "a-disease-not-a-failing", "title": "Obesity is a disease, not a character flaw", "blurb": "Why medicine now treats obesity as a chronic disease, and why blaming willpower gets the science wrong.", "minutes": 7 },
-      { "slug": "gut-bacteria-and-weight", "title": "Your gut bacteria and your weight: the evidence", "blurb": "From germ-free mice to human twins: the experiments that tie gut bacteria to fat gain.", "minutes": 8 },
-      { "slug": "how-the-gut-drives-fat-storage", "title": "How an unbalanced gut drives fat storage", "blurb": "Extra calories, leaky-gut inflammation, quiet appetite hormones and fat-storage switches.", "minutes": 8 },
-      { "slug": "why-weight-comes-back", "title": "Why the weight comes back after a diet", "blurb": "Hunger hormones, a slower metabolism and a gut that remembers obesity.", "minutes": 6 },
-      { "slug": "what-damages-the-gut", "title": "What throws the gut out of balance", "blurb": "Ultra-processed food, low fiber, additives, sweeteners and early antibiotics.", "minutes": 8 },
-      { "slug": "rebuilding-your-gut", "title": "Rebuilding a healthier gut: what actually helps", "blurb": "Fermented foods, plant variety, promising bacteria, transplants and medical treatment.", "minutes": 8 }
+      {
+        "slug": "a-disease-not-a-failing",
+        "title": "Obesity is a disease, not a character flaw",
+        "blurb": "Why medicine now treats obesity as a chronic disease, and why blaming willpower gets the science wrong.",
+        "minutes": 7
+      },
+      {
+        "slug": "gut-bacteria-and-weight",
+        "title": "Your gut bacteria and your weight: the evidence",
+        "blurb": "From germ-free mice to human twins: the experiments that tie gut bacteria to fat gain.",
+        "minutes": 8
+      },
+      {
+        "slug": "how-the-gut-drives-fat-storage",
+        "title": "How an unbalanced gut drives fat storage",
+        "blurb": "Extra calories, leaky-gut inflammation, quiet appetite hormones and fat-storage switches.",
+        "minutes": 8
+      },
+      {
+        "slug": "why-weight-comes-back",
+        "title": "Why the weight comes back after a diet",
+        "blurb": "Hunger hormones, a slower metabolism and a gut that remembers obesity.",
+        "minutes": 6
+      },
+      {
+        "slug": "what-damages-the-gut",
+        "title": "What throws the gut out of balance",
+        "blurb": "Ultra-processed food, low fiber, additives, sweeteners and early antibiotics.",
+        "minutes": 8
+      },
+      {
+        "slug": "rebuilding-your-gut",
+        "title": "Rebuilding a healthier gut: what actually helps",
+        "blurb": "Fermented foods, plant variety, promising bacteria, transplants and medical treatment.",
+        "minutes": 8
+      }
+    ]
+  },
+  {
+    "slug": "type-2-diabetes",
+    "title": "Type 2 Diabetes",
+    "summary": "How gut bacteria influence blood sugar, metformin and insulin sensitivity, and how diet can help.",
+    "evidence": "growing",
+    "intro": "People with type 2 diabetes tend to carry fewer fiber-fermenting, butyrate-producing gut bacteria, and the most common diabetes drug, metformin, appears to work partly through the gut. Human trials show that diet changes the gut in ways that can help blood sugar, but the gut is one lever among several and supports medical care rather than replacing it.",
+    "articles": [
+      {
+        "slug": "gut-bacteria-and-blood-sugar",
+        "title": "How gut bacteria shape blood sugar and type 2 diabetes",
+        "blurb": "What human studies show about gut bacteria, metformin, personal blood sugar responses to food and lean-donor stool transplants.",
+        "minutes": 5
+      },
+      {
+        "slug": "feeding-your-gut-for-blood-sugar",
+        "title": "Feeding your gut to improve blood sugar",
+        "blurb": "What trials show about fiber, fermented foods and artificial sweeteners, plus a practical plan to follow with your doctor.",
+        "minutes": 5
+      }
     ]
   }
 ]
