@@ -133,6 +133,8 @@
     form.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => load(true), 300); });
     form.addEventListener("submit", (e) => { e.preventDefault(); load(true); });
     more.addEventListener("click", () => load(false));
+    const urlQ = new URLSearchParams(location.search).get("q");
+    if (urlQ && form.q) form.q.value = urlQ;
     load(true);
 
     api("/api/research/log").then(({ runs }) => {
@@ -215,16 +217,76 @@
   }
   if ($(".cond")) { openFromHash(); window.addEventListener("hashchange", openFromHash); }
 
-  // Condition search: matches the name plus extra keywords (e.g. "weight" finds obesity)
+  // Condition search: ignores filler words ("issue", "problem", "my"), matches word stems,
+  // and shows a condition when any meaningful word matches its name or keywords.
+  const STOP = new Set(("a an and are about any as at be best can do does for from get getting gut have help how i in is " +
+    "issue issues it me my of on or problem problems should the this to trouble what when with your").split(" "));
   const norm = (t) => t.toLowerCase().replace(/[^a-z0-9 ]+/g, " ");
+  const stem = (w) => {
+    for (const suf of ["ing", "ies", "es", "ed", "s"]) if (w.length > suf.length + 3 && w.endsWith(suf)) return w.slice(0, -suf.length);
+    return w;
+  };
+  const words = (q) => norm(q).split(/\s+/).filter((w) => w.length > 1 && !STOP.has(w)).map(stem);
   const matches = (el, q) => {
     const hay = norm(el.textContent + " " + (el.dataset.keywords || ""));
-    return norm(q).split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
+    const ws = words(q);
+    return ws.length > 0 && ws.some((w) => hay.includes(w));
   };
+  // Side menus: build "On this page" from the article's section headings and fill new studies.
+  const toc = $("[data-toc]");
+  if (toc) {
+    const slug = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    const heads = $$(".rails-main h2");
+    if (heads.length < 2) toc.closest(".rail-box").hidden = true;
+    toc.innerHTML = heads.map((h) => {
+      if (!h.id) h.id = slug(h.textContent);
+      return `<li><a href="#${h.id}">${esc(h.textContent)}</a></li>`;
+    }).join("");
+    const links = $$("a", toc);
+    if ("IntersectionObserver" in window && links.length) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
+        });
+      }, { rootMargin: "-80px 0px -65% 0px" });
+      heads.forEach((h) => obs.observe(h));
+    }
+  }
+  const railStudies = $("[data-rail-studies]");
+  if (railStudies) {
+    api("/api/research?limit=4").then(({ items }) => {
+      railStudies.innerHTML = items.length
+        ? items.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a><span class="meta">${esc(s.journal)}${s.pub_date ? ", " + esc(s.pub_date) : ""}</span></li>`).join("")
+          + `<li><a class="rail-all" href="/research">All studies &rarr;</a></li>`
+        : `<li class="meta">New studies arrive daily.</li>`;
+    }).catch(() => { railStudies.closest(".rail-box").hidden = true; });
+  }
+
   const condSearch = $("#cond-search");
   if (condSearch) {
     const conds = $$(".cond");
     const empty = $("#cond-empty");
+    const studies = $("#cond-studies");
+    const studyList = studies && $("ul", studies);
+    const studyMore = studies && $("[data-studies-more]", studies);
+    let studyTimer;
+    const loadStudies = (q) => {
+      clearTimeout(studyTimer);
+      if (!studies) return;
+      if (!q || !words(q).length) { studies.hidden = true; return; }
+      studyTimer = setTimeout(async () => {
+        try {
+          const { items, total } = await api(`/api/research?limit=8&q=${encodeURIComponent(q)}`);
+          if (condSearch.value.trim() !== q) return;
+          studies.hidden = !items.length;
+          studyList.innerHTML = items.map(studyItem).join("");
+          $("[data-studies-q]", studies).textContent = q;
+          studyMore.href = `/research?q=${encodeURIComponent(q)}`;
+          studyMore.textContent = total > items.length ? `See all ${total} studies` : "Browse the research log";
+        } catch { studies.hidden = true; }
+      }, 250);
+    };
     const run = () => {
       const q = condSearch.value.trim();
       let shown = 0;
@@ -235,6 +297,7 @@
       });
       empty.hidden = shown > 0;
       if (q && shown === 1) conds.find((c) => !c.hidden).open = true;
+      loadStudies(q);
     };
     const q0 = new URLSearchParams(location.search).get("q");
     if (q0) { condSearch.value = q0; run(); }

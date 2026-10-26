@@ -71,6 +71,24 @@ test("research API lists, filters and searches", async () => {
   assert.deepEqual(data.items.map((i) => i.pmid), ["900001"]);
 });
 
+test("research search understands plain-English weight questions", async () => {
+  let data = await (await fetch(BASE + "/api/research?q=" + encodeURIComponent("weight issue"))).json();
+  assert.deepEqual(data.items.map((i) => i.pmid), ["900001"], "visceral-fat study matches 'weight issue'");
+  data = await (await fetch(BASE + "/api/research?q=" + encodeURIComponent("gut flora"))).json();
+  assert.deepEqual(data.items.map((i) => i.pmid), ["900002"], "'flora' finds microbiome studies");
+  data = await (await fetch(BASE + "/api/research?q=issue")).json();
+  assert.equal(data.total, 0, "filler words alone match nothing");
+});
+
+test("narrow reading pages get side menus; the homepage does not", async () => {
+  const diet = await (await fetch(BASE + "/living-diet")).text();
+  assert.ok(diet.includes('class="rails-layout"') && diet.includes("data-toc") && diet.includes("data-rail-studies"));
+  const home = await (await fetch(BASE + "/")).text();
+  assert.ok(!home.includes('class="rails-layout"'));
+  const cond = await (await fetch(BASE + "/conditions")).text();
+  assert.ok(cond.includes('id="cond-studies"') && cond.includes("weight loss"));
+});
+
 test("newsletter signup validates and stores the address", async () => {
   let res = await post("/api/subscribe", { email: "nope" });
   assert.equal(res.status, 400);

@@ -80,3 +80,16 @@ test("other gutsmartlive domains redirect to gutsmartlive.com", () => {
   assert.equal(canonicalRedirect("http://localhost:8787/"), null);
   assert.equal(canonicalRedirect("https://gutsmartlive.workers.dev/"), null);
 });
+
+import { expandQuery, searchWords, stem } from "../src/search.js";
+
+test("search ignores filler words and expands weight to related study terms", () => {
+  assert.deepEqual(searchWords("Weight issue"), ["weight"]);
+  assert.deepEqual(searchWords("my gut problem"), []);
+  const terms = expandQuery("weight issue");
+  for (const t of ["weight", "obesity", "adipos", "visceral"]) assert.ok(terms.includes(t), `expected ${t}`);
+  assert.ok(expandQuery("losing belly fat").includes("visceral"));
+  assert.equal(stem("probiotics"), "probiotic");
+  assert.deepEqual(expandQuery("kefir"), ["kefir"]);
+  assert.ok(!expandQuery("obesity").some((t) => "gut microbes".includes(t)), "no term matches inside 'microbes'");
+});

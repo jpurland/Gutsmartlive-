@@ -14,6 +14,8 @@ const pagesDir = join(root, "pages");
 const outDir = join(root, "public");
 const header = readFileSync(join(root, "partials/header.html"), "utf8");
 const footer = readFileSync(join(root, "partials/footer.html"), "utf8");
+const railRight = readFileSync(join(root, "partials/rail-right.html"), "utf8");
+const railLeft = readFileSync(join(root, "partials/rail-left.html"), "utf8");
 
 function walk(dir) {
   return readdirSync(dir).flatMap((name) => {
@@ -32,7 +34,17 @@ for (const file of walk(pagesDir)) {
   const meta = Object.fromEntries(
     m[1].split("\n").map((l) => l.split(/:\s*(.*)/s).slice(0, 2).map((x) => x.trim()))
   );
-  const body = raw.slice(m[0].length);
+  let body = raw.slice(m[0].length);
+  // Narrow reading pages get side menus on wide screens: "On this page" left, links right.
+  if (meta.rails === "yes") {
+    body = `<div class="rails-layout">
+${railLeft}
+<div class="rails-main">
+${body}
+</div>
+${railRight}</div>
+`;
+  }
   const rel = relative(pagesDir, file);
   const path = "/" + rel.replace(/index\.html$/, "").replace(/\.html$/, "");
 

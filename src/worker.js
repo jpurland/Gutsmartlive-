@@ -2,6 +2,7 @@
 // Serves the static site, the JSON API, the moderation tools, and the scheduled jobs.
 
 import { runResearchFetch } from "./research.js";
+import { expandQuery } from "./search.js";
 import { sendWeeklyDigest, notifyAdmin, addResendContact, unsubscribeToken } from "./email.js";
 import { escapeHtml, clean, isEmail, sha256Hex, canonicalRedirect } from "./util.js";
 
@@ -67,7 +68,16 @@ async function listResearch(env, url) {
   const where = [];
   const params = [];
   if (topic) { where.push("topic = ?"); params.push(topic); }
-  if (q) { where.push("(title LIKE ? OR journal LIKE ?)"); params.push(`%${q}%`, `%${q}%`); }
+  if (q) {
+    // Match any expanded term ("weight issue" -> weight, obes, adipos, visceral, ...).
+    const terms = expandQuery(q);
+    if (terms.length) {
+      where.push(`(${terms.map(() => "lower(title) LIKE ? OR lower(journal) LIKE ?").join(" OR ")})`);
+      for (const t of terms) params.push(`%${t}%`, `%${t}%`);
+    } else {
+      where.push("0");
+    }
+  }
   const whereSql = where.length ? `WHERE ${where.join(" AND ")}` : "";
 
   const rows = await env.DB.prepare(
