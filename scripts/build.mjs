@@ -52,6 +52,8 @@ ${railRight}</div>
     .replaceAll("{{title}}", meta.title === "Gut Smart Live" ? "Gut Smart Live — living foods and visceral fat" : `${meta.title} | Gut Smart Live`)
     .replaceAll("{{description}}", meta.description || "")
     .replaceAll("{{path}}", path);
+  // Rails pages are wider; the header widens with them so its edges line up with the content.
+  if (meta.rails === "yes") head = head.replace("<body>", '<body class="has-rails">');
   for (const n of NAV) {
     head = head.replace(`data-nav="${n}"`, meta.nav === n ? `data-nav="${n}" aria-current="page"` : `data-nav="${n}"`);
   }
