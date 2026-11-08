@@ -382,3 +382,14 @@ main > .band:last-child { margin-bottom: -32px; }
 .rail-steps li { margin-bottom: 6px; }
 .rail-steps b { color: var(--ink); }
 .rail-steps .rail-all, .rail-links .rail-all { font-family: var(--sans); font-size: 0.9rem; text-decoration: none; }
+
+/* MergeWorks credit block */
+.mwc-wrap{display:flex;justify-content:center;padding:14px 0 2px;margin-top:4px;border-top:1px solid var(--line)}
+.mwc-wrap a.mwc{display:inline-flex;flex-direction:column;align-items:center;gap:3px;min-height:44px;padding:6px 12px;border-radius:8px;text-decoration:none;font-size:11px;line-height:1.3;letter-spacing:.02em;color:#5b6660}
+.mwc-wrap a.mwc:hover{background:rgba(30,37,34,.05)}
+.mwc-wrap a.mwc:focus-visible{outline:2px solid #0061FF;outline-offset:2px}
+.mwc-chip{display:inline-flex;background:#0C0E11;border-radius:8px;padding:6px 9px}
+.mwc-chip svg{display:block;height:30px;width:auto}
+.mwc-name{display:block;font-size:14px;font-weight:600;color:#1e2522}
+.mwc-name em{font-style:normal;color:#0061FF}
+.mwc-tag{display:block;color:#0061FF}
