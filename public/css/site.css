@@ -389,7 +389,7 @@ main > .band:last-child { margin-bottom: -32px; }
 .mwc-wrap a.mwc:hover{background:rgba(30,37,34,.05)}
 .mwc-wrap a.mwc:focus-visible{outline:2px solid #0061FF;outline-offset:2px}
 .mwc-chip{display:inline-flex;background:#0C0E11;border-radius:8px;padding:6px 9px}
-.mwc-chip svg{display:block;height:30px;width:auto}
+.mwc-chip img{display:block;height:30px;width:auto}
 .mwc-name{display:block;font-size:14px;font-weight:600;color:#1e2522}
 .mwc-name em{font-style:normal;color:#0061FF}
 .mwc-tag{display:block;color:#0061FF}
